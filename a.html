@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <form >
+        <fieldset style="border-color:black ;">
+            <legend><label > Nom: </label></legend>
+            <input type="text" name="nom " id ="Nom" placeholder="Votre nom">
+        </fieldset>
+       
+        <fieldset style="border-color:black ;">
+            <legend><label > Prénom: </label></legend>
+            <input type="text" name="prenom " id ="Prénom" placeholder="Votre prenom">
+        </fieldset>
+        
+        <fieldset style="border-color:black ;">
+            <legend><label > Age : </label></legend>
+            <input type="text" name="age " id="age" placeholder="Votre Age">
+        </fieldset>
+
+        <fieldset style="border-color:black ;">
+            <legend><label > Ville : </label></legend>
+            <input type="text" name="ville " id ="Ville" placeholder="Votre ville">
+        </fieldset>
+       
+        <fieldset style="border-color:black ;">
+            <legend><label > Loisirs : </label></legend>
+            <input type="text" name="loisirs " id="Loisirs">
+        </fieldset>
+
+        <fieldset style="border-color:black ;">
+            <legend><label > Numero de telephone : </label></legend>
+            <input type="tel" name="num tel" placeholder="+216" id="NumTel">
+        </fieldset>
+
+        <fieldset style="border-color:black ;">
+            <legend><label > E-mail : </label></legend>
+            <input type="email" name="email" placeholder="user@gmail.com" id="email">
+        </fieldset>
+
+        
+        <fieldset style="border-color:black ;">
+            <legend><label > Remarque pour l'administration : </label></legend>
+            <textarea name="intro" cols="75" rows="7" placeholder="Vote Remarque"> </textarea>
+        </fieldset>
+        
+        
+        <fieldset style="border-color:black ;">
+            <legend > <label > Votre baccalauréat :</label> </legend>
+            <Select name="diplome" >
+            <option>Bac mathématique</option>
+            <option>Bac science</option>
+            <option>Bac technique</option>
+            <option>Bac informatique </option>
+            </Select>
+        </fieldset>
+       
+        
+     <fieldset style="border-color:black ;">
+        <legend><label > Diplome:</label></legend>
+        <input id="diplome" type="radio" name="choix 1" value="License">License
+        <input id ="diplome" type="radio" name="choix 2" value="preparatoire">preparatoire
+
+     </fieldset>
+        
+        
+      <fieldset style="border-color:black ;">
+        <legend><label > filiere: </label></legend>
+        <input id="checkbox" type="checkbox" name="choix1 " value="GT">GT
+        <input id="checkbox" type="checkbox" name="choix2  " value="IDSD" >IDSD
+        <input id="checkbox" type="checkbox" name="choix3  " value="GII">GEC
+        <input id="checkbox" type="checkbox" name="choix4  " value="GEC">GII
+       
+      </fieldset>
+
+      <br>
+        <input type="reset" name="test" value="reset" style="font-size: larger;">
+        <input type="submit" name="test" value="Envoyer" style="font-size: larger;">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </form>
+  
+  <script>  
+
+document.forms[0].addEventListener("submit", function(evenement) {
+
+if (document.getElementById("Nom").value == "") {
+evenement.preventDefault();
+alert("Pensez à taper votre Nom !");
+document.getElementById("Nom").focus();
+}
+if (document.getElementById("Prénom").value == "") {
+    evenement.preventDefault();
+    alert("Pensez à taper votre Prénom !");
+    document.getElementById("Prénom").focus();
+    }
+
+if (document.getElementById("Ville").value == "") {
+            evenement.preventDefault();
+            alert("Pensez à taper votre Ville !");
+            document.getElementById("Ville").focus();
+            }
+if (document.getElementById("email").value == "") {
+            evenement.preventDefault();
+            alert("Tapez un email valable pour avoir une réponse.");
+            document.getElementById("email").focus();
+                }
+if (document.getElementById("Loisirs").value == "") {
+            evenement.preventDefault();
+            alert("Pensez à taper vos Loisirs !");
+            document.getElementById("Loisirs").focus();
+                }
+
+if (document.getElementById("NumTel").value == "") {
+                    evenement.preventDefault();
+                    alert("Pensez à taper votre Numero de telephone !");
+                    document.getElementById("Numero de telephone").focus();
+                        }                
+
+
+
+            });
+
+
+document.getElementById("age").addEventListener("change", verif);
+ function verif() {
+ age = document.getElementById("age").value;
+ if(age<=10 || age>=120)
+ alert("Tapez un âge compris entre 10 et 120 ans");
+ else
+ alert("Vous avez : " + age + " ans");
+ }
+
+ function montreCheckBox() {
+    var elt= document.getElementById('checkbox');
+    alert("cochée : "+ elt.checked); 
+    }
+   // Le tableau : 
+
+            var List1=[];
+            var List2=[];
+            var List3=[];
+            var List4=[];
+            var List5=[];
+            var List6=[];
+            var List7=[];
+            var List8=[];
+            var List9=[];
+            var List10=[];
+             var List11=[];
+            
+            var n = 1;
+            var x = 0;
+            function AddRow(){
+                var AddRown=document.getElementById('tab');
+                var NewRow=AddRown.insertRow(n);
+                List1[x] = document.getElementById("Nom").value;
+                List2[x] = document.getElementById("Prénom").value;
+                List3[x] = document.getElementById("Age").value;
+                List4[x] = document.getElementById("Ville").value;
+                List5[x] = document.getElementById("Loisirs").value;
+                List6[x] = document.getElementById("NumTel").value;
+                List7[x] = document.getElementById("email").value;
+                List8[x] = document.getElementById("diplome").value;
+                List9[x] = document.querySelector('checkbox').value;
+                
+                
+                 
+                var cel1 = NewRow.insertCell(0);
+                var cel2 = NewRow.insertCell(1);
+                var cel3 = NewRow.insertCell(2);
+                var cel4 = NewRow.insertCell(3);
+                var cel5 = NewRow.insertCell(4);
+                var cel6 = NewRow.insertCell(5);
+                var cel7 = NewRow.insertCell(6);
+                var cel8 = NewRow.insertCell(7);
+                var cel9 = NewRow.insertCell(8);
+                
+                 
+                cel1.innerHTML = List1[x];
+                cel2.innerHTML = List2[x];
+                cel3.innerHTML = List3[x];
+                cel4.innerHTML = List4[x];
+                cel5.innerHTML = List5[x];
+                cel6.innerHTML = List6[x];
+                cel7.innerHTML = List7[x];
+                cel8.innerHTML = List8[x];
+                cel9.innerHTML = List9[x];
+               
+                
+                n++;
+                x++;
+            
+            }
+    </script>
+    
+</body>
+
+
+
+</html>
